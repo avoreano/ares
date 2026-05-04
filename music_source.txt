@@ -1,0 +1,7 @@
+1,Fire Dance,Vivid BAD Squad,Fire Dance Single,2025,214,C:/musica/firedance.mp3
+2,PON PON PON,Kyary Pamyu Pamyu,Moshi Moshi Harajuku,2011,230,C:/musica/ponponpon.mp3
+3,World is Mine,Ryo feat. Hatsune Miku,supercell,2008,315,C:/musica/worldismine.mp3
+4,Crossing Field,LiSA,crossing field Single,2012,270,C:/musica/crossingfield.mp3
+5,Chandelier,Sia,1000 Forms of Fear,2014,218,C:/musica/chandelier.mp3
+6,Radioactive,Imagine Dragons,Night Visions,2012,187,C:/musica/radioactive.mp3
+7,Gimme Chocolate,BABYMETAL,BABYMETAL,2014,195,C:/musica/gimmechocolate.mp3

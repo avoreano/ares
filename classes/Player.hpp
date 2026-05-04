@@ -1,7 +1,7 @@
-#include "data_structures/LKList.hpp"
+#include "../data_structures/LKList.hpp"
 #include "Cancion.hpp"
 #include "Configuracion.hpp"
-#include "core/Playlist.hpp"
+#include "../core/Playlist.hpp"
 
 class Player{
     private:

@@ -135,7 +135,7 @@ template <typename A>
 bool LKList<A>::eliminarPorValor(A valor) {
     Nodo<A>* actual = cabeza;
     while (actual) {
-        if (actual->valor == valor) {
+        if (actual->dato == valor) {
             if (actual == cabeza) {
                 eliminarInicio();
             } else if (actual == cola) {

@@ -1,5 +1,5 @@
 #pragma once
-#include "classes/Player.hpp"
+#include "../classes/Player.hpp"
 
 
 class Menu {

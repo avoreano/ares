@@ -118,14 +118,13 @@ void Player::playlistActual(){
         if(nodoActual != nullptr && actual->dato.getId() == nodoActual->dato.getId()){
             cout << "->";
         } else{
-            cout << "Vacia";
+            cout << "  ";
         }
 
         cout << contador << ". "<< actual->dato.getNombre() << " - " << actual->dato.getArtista() << endl;
         actual = actual->siguiente;
         contador++;
     }
-    cout << "-------------"<< endl;
 }
 
 void Player::mostrarRegistroTotal(){
@@ -139,7 +138,7 @@ void Player::mostrarRegistroTotal(){
     while(actual != nullptr){
         
         cout << "ID" << actual->dato.getId() << " | " << actual->dato.getNombre() << " - " << actual->dato.getArtista() 
-        << "( " << actual->dato.getAlbum() << endl;
+        << "( " << actual->dato.getAlbum() << " )" << endl;
         
         actual = actual->siguiente;
     }

@@ -1,5 +1,6 @@
 #include "Playlist.hpp"
 #include <iostream>
+using namespace std;
 
 Playlist::Playlist(string nombre){
     nombrePlaylist = nombre;

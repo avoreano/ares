@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
-#include "data_structures/LKList.hpp"
-#include "classes/Cancion.hpp"
+#include "../data_structures/LKList.hpp"
+#include "../classes/Cancion.hpp"
 using namespace std;
 
 class Playlist{

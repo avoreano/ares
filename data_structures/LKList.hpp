@@ -1,3 +1,4 @@
+#pragma once
 #include "Nodo.hpp"
 /*Lista doblemente enlazada la cual vamos a ocupar para usar como base para
 stack y queue, ademas va a contener la playlist*/
@@ -48,4 +49,7 @@ public:
     void invertir();
     void ordenar();
     void vaciar();
+
 };
+
+#include "LKList.cpp"
