@@ -12,7 +12,6 @@ class Configuracion{
 
         Configuracion();
 
-
         void cargarEstado();
         void guardarEstado();
 };

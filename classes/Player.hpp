@@ -1,11 +1,12 @@
-#include "data_structures/LkList.hpp"
+#include "data_structures/LKList.hpp"
 #include "Cancion.hpp"
 #include "Configuracion.hpp"
+#include "core/Playlist.hpp"
 
 class Player{
     private:
         LKList<Cancion> registroCanciones;
-        LKList<Cancion> listaReproduccion; //Se ocupara para lista de canciones.
+        Playlist listaReproduccion; //Se ocupara para lista de canciones.
         Nodo<Cancion>* nodoActual; //Puntero de cancion que actualmente suena.
         Configuracion config;  //Esto maneja el status.cfg
     
@@ -17,15 +18,20 @@ class Player{
 
         void inicializar();
 
-        //Funciones del menu principal
+        //Funciones del menu principal (Controles de reproduccion)
         void playOPausa();
         void cancionSiguiente();
         void cancionAnterior();
         void ponerAleatorio();
         void ponerRepeticion();
 
-        //Getter para printear canciones en el menu
+        //Metodos para poder printear en el menu
+        void playlistActual();
+        void mostrarRegistroTotal();
+
+        //Getter de estado
         Cancion* getCancionActual();
         Configuracion getConfig();
+        
 
 };

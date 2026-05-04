@@ -25,3 +25,25 @@ Cancion::Cancion(int _id, string _nombre, string _artista, string _album, int _a
     ruta = _ruta;
 
 }
+
+int Cancion::getId() const {
+    return id;
+}
+string Cancion::getNombre() const{
+    return nombre;
+}
+string Cancion::getArtista() const{
+    return artista;
+}
+string Cancion::getAlbum() const{
+    return album;
+}
+int Cancion::getAnio() const{
+    return anio;
+}
+int Cancion::getDuracion() const{
+    return duracion;
+}
+string Cancion::getRuta() const{
+    return ruta;
+}
