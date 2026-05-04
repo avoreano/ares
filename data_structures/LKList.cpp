@@ -14,17 +14,17 @@ LKList<A>::~LKList() {
 
 // Funciones relacionadas al estado de la lista
 template <typename A>
-bool LKList::estaVacia() const {
+bool LKList<A>::estaVacia() const {
     return cabeza == nullptr;
 }
 template <typename A>
-int LKList::getTamanio() const {
+int LKList<A>::getTamanio() const {
     return tamanio;
 }
 
 // Funciones relacionadas a la insercion de nodos
 template <typename A>
-void LKList::insertarInicio(A valor) {
+void LKList<A>::insertarInicio(A valor) {
     Nodo<A>* nuevo = new Nodo<A>(valor);
     if (estaVacia()) {
         cabeza = cola = nuevo;
@@ -37,7 +37,7 @@ void LKList::insertarInicio(A valor) {
 }
 
 template <typename A>
-void LKList::insertarFinal(A valor) {
+void LKList<A>::insertarFinal(A valor) {
     Nodo<A>* nuevo = new Nodo<A>(valor);
     if (estaVacia()) {
         cabeza = cola = nuevo;
@@ -50,7 +50,7 @@ void LKList::insertarFinal(A valor) {
 }
 
 template <typename A>
-void LKList::insertarEnPos(A valor, int pos) {
+void LKList<A>::insertarEnPos(A valor, int pos) {
     if (pos < 0 || pos > tamanio) {
         std::cerr << "Posición inválida" << std::endl;
         return;
@@ -77,7 +77,7 @@ void LKList::insertarEnPos(A valor, int pos) {
 
 // Funciones relacionadas a la eliminacion de nodos
 template <typename A>
-void LKList::eliminarInicio() {
+void LKList<A>::eliminarInicio() {
     if (estaVacia()) {
         std::cerr << "La lista está vacía" << std::endl;
         return;
@@ -94,7 +94,7 @@ void LKList::eliminarInicio() {
 }
 
 template <typename A>
-void LKList::eliminarFinal() {
+void LKList<A>::eliminarFinal() {
     if (estaVacia()) {
         std::cerr << "La lista está vacía" << std::endl;
         return;
@@ -111,7 +111,7 @@ void LKList::eliminarFinal() {
 }
 
 template <typename A>
-void LKList::eliminarEnPos(int pos) {
+void LKList<A>::eliminarEnPos(int pos) {
     if (pos < 0 || pos >= tamanio) {
         std::cerr << "Posición inválida" << std::endl;
         return;
@@ -132,7 +132,7 @@ void LKList::eliminarEnPos(int pos) {
 }
 
 template <typename A>
-bool LKList::eliminarPorValor(A valor) {
+bool LKList<A>::eliminarPorValor(A valor) {
     Nodo<A>* actual = cabeza;
     while (actual) {
         if (actual->valor == valor) {
@@ -155,12 +155,12 @@ bool LKList::eliminarPorValor(A valor) {
 
 // Getters
 template <typename A>
-A LKList::obtener(int pos) const {
+A LKList<A>::obtener(int pos) const {
     return getNodo(pos)->dato;
 }
 
 template <typename A>
-A LKList::primero() const {
+A LKList<A>::primero() const {
     if (estaVacia()) {
         std::cerr << "La lista está vacía" << std::endl;
         return A();
@@ -169,7 +169,7 @@ A LKList::primero() const {
 }
 
 template <typename A>
-A LKList::ultimo() const {
+A LKList<A>::ultimo() const {
     if (estaVacia()) {
         std::cerr << "La lista está vacía" << std::endl;
         return A();
@@ -178,17 +178,17 @@ A LKList::ultimo() const {
 }
 
 template <typename A>
-Nodo<A>* LKList::getCabeza() const {
+Nodo<A>* LKList<A>::getCabeza() const {
     return cabeza;
 }
 
 template <typename A>
-Nodo<A>* LKList::getCola() const {
+Nodo<A>* LKList<A>::getCola() const {
     return cola;
 }
 
 template <typename A>
-Nodo<A>* LKList::getNodo(int pos) const {
+Nodo<A>* LKList<A>::getNodo(int pos) const {
     if (pos < 0 || pos >= tamanio) {
         std::cerr << "Posición inválida" << std::endl;
         return nullptr;
@@ -210,7 +210,7 @@ Nodo<A>* LKList::getNodo(int pos) const {
 
 // Funciones relacionadas a la busqueda de nodos
 template <typename A>
-int LKList::buscar(A valor) const {
+int LKList<A>::buscar(A valor) const {
     Nodo<A>* actual = cabeza;
     int pos = 0;
     while (actual != nullptr) {
@@ -224,13 +224,13 @@ int LKList::buscar(A valor) const {
 }
 
 template <typename A>
-bool LKList::contiene(A valor) const {
+bool LKList<A>::contiene(A valor) const {
     return buscar(valor) != -1;
 }
 
 // Prints
 template <typename A>
-void LKList::mostrarAdelante() const {
+void LKList<A>::mostrarAdelante() const {
     if (estaVacia()) {
         std::cout << "La lista está vacía" << std::endl;
         return;
@@ -244,7 +244,7 @@ void LKList::mostrarAdelante() const {
 }
 
 template <typename A>
-void LKList::mostrarAtras() const {
+void LKList<A>::mostrarAtras() const {
     if (estaVacia()) {
         std::cout << "La lista está vacía" << std::endl;
         return;
@@ -259,7 +259,7 @@ void LKList::mostrarAtras() const {
 
 // Operaciones necesarias para el reproductor
 template <typename A>
-void LKList::invertir() {
+void LKList<A>::invertir() {
     if (tamanio <= 1) return;
     Nodo<A>* actual = cabeza;
     // Intercambiar los punteros siguiente y anterior de cada nodo
@@ -277,7 +277,7 @@ void LKList::invertir() {
 }
 
 template <typename A>
-void LKList::ordenar() {
+void LKList<A>::ordenar() {
     // Implementacion de bubble sort para ordenar la lista
     if (tamanio <= 1) return;
 
@@ -300,7 +300,7 @@ void LKList::ordenar() {
 }
 
 template <typename A>
-void LKList::vaciar() { 
+void LKList<A>::vaciar() { 
     while (!estaVacia()) {
         eliminarInicio();
     }

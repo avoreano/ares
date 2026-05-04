@@ -48,6 +48,4 @@ public:
     void invertir();
     void ordenar();
     void vaciar();
-
-    #include "LKList.cpp"
 };

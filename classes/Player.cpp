@@ -179,14 +179,14 @@ void Player::cargarMusica(){
         try
         {
             int id = stoi(id_interno);
-            int anio = stoi(anio);
-            int duracion = stoi(duracion);
+            int anio = stoi(str_anio);
+            int duracion = stoi(str_duracion);
 
             Cancion c(id, nombre, artista, album, anio, duracion, ruta);
 
             registroCanciones.insertarFinal(c);
 
-            listaReproduccion.agregarCancion(c);
+            listaReproduccion.agregarCanciones(c);
         }
 
         catch(const std::exception& e)
