@@ -67,3 +67,7 @@ vcpkg_installed/
 # test output & cache
 Testing/
 .cache/
+
+# archivos creados por el programa
+ares.exe
+status.cfg
