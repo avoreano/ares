@@ -17,12 +17,12 @@ public:
     bool estaVacia() const;
     int getTamanio() const;
 
-    // Funciones relacionadas a la insercion de valores
+    // Funciones relacionadas a la insercion de nodos
     void insertarInicio(A valor);
     void insertarFinal(A valor);
     void insertarEnPos(A valor, int pos);
 
-    // Funciones relacionadas a la eliminacion de valores
+    // Funciones relacionadas a la eliminacion de nodos
     void eliminarInicio();
     void eliminarFinal();
     void eliminarEnPos(int pos);
@@ -36,7 +36,7 @@ public:
     Nodo<A>* getCola() const;
     Nodo<A>* getNodo(int pos) const; // un puntero directo al nodo
 
-    // Funciones relacionadas a la busqueda de valores
+    // Funciones relacionadas a la busqueda de nodos
     int buscar(A valor) const;
     bool contiene(A valor) const;
 
