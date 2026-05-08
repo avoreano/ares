@@ -17,10 +17,6 @@ Antes de ejecutar asegúrate de tener en la misma carpeta que el .exe:
 music_source.txt — listado de canciones con el siguiente formato:
 id,nombre,artista,album,año,duracion_segundos,ruta_archivo
 
-Ejemplo:
-1,Fire Dance,Vivid BAD Squad,Fire Dance Single,2025,214,C:/musica/firedance.mp3
-2,PON PON PON,Kyary Pamyu Pamyu,Moshi Moshi Harajuku,2011,230,C:/musica/ponponpon.mp3
-
  ## Funcionalidades del programa:
 | Tecla |                                 Acción                                |
 |-------|-----------------------------------------------------------------------|
@@ -32,26 +28,6 @@ Ejemplo:
 | `A` | Ver lista de reproducción actual y saltar canciones |
 | `L` | Ver catálogo completo, agregar o eliminar canciones |
 | `X` | Guardar estado y salir del programa |
-
- ## La estructura del proyecto:
-
-ares/
-├── classes/
-│   ├── Cancion.hpp / Cancion.cpp
-│   ├── Configuracion.hpp / Configuracion.cpp
-│   └── Player.hpp / Player.cpp
-├── core/
-│   ├── Menu.hpp / Menu.cpp
-│   └── Playlist.hpp / Playlist.cpp
-├── data_structures/
-│   ├── Nodo.hpp
-│   ├── LKList.hpp / LKList.cpp
-│   ├── Stack.hpp
-│   └── Queue.hpp
-├── main.cpp
-├── compilar.bat
-├── music_source.txt
-└── README.md
 
  ## Para este proyecto se utilizo:
 
