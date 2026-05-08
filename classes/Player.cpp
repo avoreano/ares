@@ -3,7 +3,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-
+#include <random>
 using namespace std;
 
 
@@ -73,9 +73,63 @@ void Player::cancionAnterior(){
 }
 
 void Player::ponerAleatorio(){
+
+    //Revisa si la el registro esta vacio o no
+    if (registroCanciones.estaVacia()){
+        return;
+    }
+
     config.modoAleatorio = !config.modoAleatorio; 
+
     if(config.modoAleatorio){
-        //Falta por implementar un modo aleatorio.
+        
+        //Este hace que se desactive o active el aleatorio, depende de en que este.
+        config.modoAleatorio = !config.modoAleatorio;
+        
+        //Va a ver si hay canciones siguientes o en reproduccion
+        if(nodoActual != nullptr && nodoActual ->siguiente !=nullptr){
+
+            //Cuenta cuantas canciones quedan en la lista de reproduccion.
+            int quedan = 0;
+            Nodo<Cancion>* tempCanciones = nodoActual->siguiente;
+            while (tempCanciones != nullptr){
+                quedan++;
+                tempCanciones = tempCanciones->siguiente;
+            }
+            
+            Cancion* canciones = new Cancion[quedan]; //Para guardar las canciones que quedan.
+
+            tempCanciones = nodoActual->siguiente;
+            for(int i = 0; i < quedan ;i++){ //Se guardan todas las canciones que quedan.
+                canciones[i] = tempCanciones->dato;
+                tempCanciones = tempCanciones->siguiente;
+            }
+
+            random_device rd;
+            mt19937 gen(rd());
+
+            for (int i = quedan - 1; i > 0; i--){
+
+                uniform_int_distribution<> dis(0,i); //Esto crea un rango entre 0 y el i
+                int j = dis(gen);
+
+                //Cambiar canciones
+                Cancion cambio = canciones[i];
+                canciones[i] = canciones[j];
+                canciones[j] = cambio;
+                
+            }
+            
+            //Volver a asignar las canciones
+            tempCanciones = nodoActual->siguiente;
+            for(int i = 0; i < quedan; i++){
+                tempCanciones->dato = canciones[i];
+                tempCanciones = tempCanciones->siguiente;
+            }
+
+            delete[] canciones;
+        }
+
     }
     config.guardarEstado();
 }
@@ -146,9 +200,6 @@ void Player::mostrarRegistroTotal(){
 }
 
 void Player::cargarMusica(){
-    /*Falta implementar logica para leer el txt de las canciones
-    Agregar con la logica que puso el profe del txt
-    id_interno,nombre_cancion,nombre_artista,nombre_album,año,duración_en_segundos,ubicacion_archivo */
 
     ifstream arch("music_source.txt");
 
