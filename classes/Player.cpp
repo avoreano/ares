@@ -76,15 +76,16 @@ void Player::ponerAleatorio(){
 
     //Revisa si la el registro esta vacio o no
     if (registroCanciones.estaVacia()){
+        cout << "El archivo de canciones esta vacio" << endl;
         return;
     }
 
+    //Este hace que se desactive o active el aleatorio, depende de en que este.
     config.modoAleatorio = !config.modoAleatorio; 
 
     if(config.modoAleatorio){
         
-        //Este hace que se desactive o active el aleatorio, depende de en que este.
-        config.modoAleatorio = !config.modoAleatorio;
+        
         
         //Va a ver si hay canciones siguientes o en reproduccion
         if(nodoActual != nullptr && nodoActual ->siguiente !=nullptr){

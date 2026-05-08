@@ -19,6 +19,7 @@ void Menu::printInterfaz() {
 
     Cancion* actual = reproductor.getCancionActual();
     Configuracion cfg = reproductor.getConfig();
+    string aleatorio;
 
     cout << "=====================================" << endl;
     cout << "            ARES 2.0                 " << endl;
@@ -27,6 +28,7 @@ void Menu::printInterfaz() {
     if (actual != nullptr) {
         string modos = "";
         if (cfg.modoAleatorio) modos += "S";
+
         if (cfg.modoRepeticion != "Desactivado") {
             if (!modos.empty()) modos += "-";
             modos += cfg.modoRepeticion;
@@ -39,6 +41,13 @@ void Menu::printInterfaz() {
             estado = "En Pausa";
         }
 
+        aleatorio = "";
+        if(cfg.modoAleatorio){
+            aleatorio = "Activado";
+        }else {
+            aleatorio = "Desactivado";
+        }
+        
         if (!modos.empty())
             cout << estado << " (" << modos << "): " << actual->getNombre() << endl;
         else
@@ -49,14 +58,16 @@ void Menu::printInterfaz() {
     } else {
         cout << "Reproduccion Detenida" << endl;
         cout << "No hay canciones cargadas" << endl;
+        
     }
+
 
     cout << "=====================================" << endl;
     cout << "OPCIONES: " << endl;
     cout << "W - REPRODUCIR/PAUSAR" << endl;
     cout << "Q - CANCION ANTERIOR" << endl;
     cout << "E - CANCION SIGUIENTE" << endl;
-    cout << "S - ACTIVAR/DESACTIVAR MODO ALEATORIO" << endl;    
+    cout << "S - ACTIVAR/DESACTIVAR MODO ALEATORIO (" << aleatorio << ")" << endl;    
     cout << "R - REPETICION (" << cfg.modoRepeticion << ")" << endl;
     cout << "A - VER LISTA DE REPRODUCCION ACTUAL" << endl;
     cout << "L - LISTADO DE CANCIONES" << endl;
@@ -108,11 +119,11 @@ void Menu::iniciar(){
 
         case 'X': //Salir (Cerrar Ares)
             funcionando = false;
-            cout << "CERRANDO EL MEJOR REPRODUCTOR $ ARES $, ¡Hasta Luego Usuario!" << endl;
+            cout << "CERRANDO EL MEJOR REPRODUCTOR $ ARES 2.0 $, ¡Hasta Luego Usuario!" << endl;
             break;
         
         default:
-            cout << "Opción no válida. Por favor, seleccione una opción válida." << endl;
+            cout << "Opcion no valida. Por favor, seleccione una opcion valida." << endl;
             system("pause");
             break;
         }
