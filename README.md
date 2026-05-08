@@ -9,6 +9,9 @@ ARES es un reproductor de música de consola desarrollado en C++ como parte del 
 Para la compilación y ejecución de ares, se tiene que hacer doble click en el archivo compilar.bat en el explorador de windows/linux/mac.
 El script compila todos los archivos fuente y ejecuta el programa automáticamente si la compilación es exitosa.
 
+ ## Diagrama de clases:
+<img width="906" height="933" alt="diagrama de clases drawio" src="https://github.com/user-attachments/assets/12a4e477-4aa3-408e-ae79-62a2a4c1f98c" />
+
  ## Archivos necesarios:
 Antes de ejecutar asegúrate de tener en la misma carpeta que el .exe:
 music_source.txt — listado de canciones con el siguiente formato:
